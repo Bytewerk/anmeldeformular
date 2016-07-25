@@ -1,20 +1,34 @@
+\def\exMitgliedVorname{Bernd}
+\def\exMitgliedName{Bingo}
+\def\exMitgliedStrasse{Sackgasse 23}
+\def\exMitgliedStadt{13370 Musterstadt}
+\def\exMitgliedAnrede{Herr}
+\def\kuendigungsjahr{2016}
+\def\kuendigungsdatum{25. Juli \kuendigungsjahr}
+\def\exMitgliedLogin{bb4242}
 \documentclass[letterhead]{bingoevletter}
+\usepackage[ngerman]{babel}
 
 
 \begin{document}
 	\setkomavar{subject}{Bestätigung Ihrer Kündigung beim Bürgernetz Ingolstadt e.V.}
-	\begin{letter}{foo}
-	\opening{Sehr geehrte «Anrede»,}
+	\begin{letter}{\exMitgliedAnrede{} \exMitgliedVorname{} \exMitgliedName\\
+			\exMitgliedStrasse\\
+			\exMitgliedStadt
+		}
+	\opening{Sehr geehrte(r) \exMitgliedAnrede{} \exMitgliedName,}
 
-	mit Bedauern haben wir Ihre Kündigung vom «Eingang\_K» zur Kenntnis genommen und bestätigen Ihnen diese hiermit. Sie wird zum 31.12.20xx wirksam. 
+	mit Bedauern haben wir Ihre Kündigung vom \def\kuendigungsdatum{} zur Kenntnis genommen und bestätigen Ihnen diese hiermit. Sie wird zum 31.12.\kuendigungsjahr{} wirksam.
 
-	Außerdem heben wir zum gleichen Zeitpunkt die Zugangsberechtigung zu unseren Kommunikations-einrichtungen auf. (Login: «Login») 
-	Bitte sichern Sie bis zu diesem Datum etwaige auf den Servern von bingo e.V. abgelegte persönliche Daten (Mail, Homepage etc.), da diese mit Erlöschen der Mitgliedschaft automatisch unwiderruflich gelöscht werden. 
+	Außerdem heben wir zum gleichen Zeitpunkt die Zugangsberechtigung zu unseren Kommunikationseinrichtungen auf (Login: \texttt{\exMitgliedLogin}).
+	Bitte sichern Sie bis zu diesem Datum etwaige auf den Servern von bingo e.V. abgelegte persönliche Daten (Mail, Homepage etc.), da diese mit Erlöschen der Mitgliedschaft automatisch unwiderruflich gelöscht werden.
 
 
-	Kündigungsfrist gemäß Beitragsordnung bingo e.V. vom 06.06.2005: 
-	„Wird die Mitgliedschaft nicht bis 30.11. zum Jahresende gekündigt, 
-	verlängert sie sich automatisch um ein weiteres Jahr.“ 
+	Kündigungsfrist gemäß Beitragsordnung bingo e.V. vom 06.06.2005:%
+	\begin{quotation}
+	„Wird die Mitgliedschaft nicht bis 30.11. zum Jahresende gekündigt,
+	verlängert sie sich automatisch um ein weiteres Jahr.“
+	\end{quotation}
 
 
 	\closing{Mit freundlichen Grüßen}
