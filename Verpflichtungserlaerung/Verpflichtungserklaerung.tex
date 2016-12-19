@@ -1,0 +1,94 @@
+\documentclass[DIV=12,BCOR=1.5cm]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[table]{xcolor}
+% Prevent an option clash
+\usepackage[letterhead,impressum]{bingoev}
+\usepackage{tabu}
+\usepackage{framed}
+\usepackage{eurosym}
+\usepackage{multicol}
+
+\makeatletter
+\def\@seccntformat#1{%
+	\expandafter\ifx\csname c@#1\endcsname\c@section\else
+	\csname the#1\endcsname\quad
+	\fi}
+\makeatother
+
+\newcommand{\VerpflichtenderAnrede}{Herr}
+\newcommand{\VerpflichtenderVorname}{Thomas}
+\newcommand{\VerpflichtenderNachname}{Kolb}
+
+\title{Verpflichtungserklärung nach § 5 des Bundesdatenschutzgesetzes (BDSG)}
+
+\begin{document}
+
+\makeatletter
+\vskip1em
+{\usekomafont{title}\huge\@title}
+\vskip2em
+\makeatother
+
+\bingoevNameLang\\
+Vertreten durch \bingoevVorsitzender (1. Vorsitzender) oder\\ \bingoesStlvVorsitzernder (Stlv. Vorsitzender) \\
+\bingoevAddrStrasse\\
+\bingoevAddrStadt\\
+
+Sehr geehrte(r) \VerpflichtenderAnrede\ \VerpflichtenderVorname\ \VerpflichtenderNachname,\\
+
+aufgrund Ihrer Aufgabenstellung im Verein verpflichte ich Sie auf die Wahrung des Datengeheimnisses nach § 5 BDSG. Nach dieser Vorschrift ist es Ihnen untersagt, personenbezogene Daten unbefugt zu erheben, zu verarbeiten oder zu nutzen (Datengeheimnis).\\
+
+Diese Verpflichtung besteht auch nach Beendigung Ihrer Tätigkeit fort.\\
+
+Verstöße gegen das Datengeheimnis können nach §§ 44, 43 Abs. 2 BDSG sowie nach anderen Strafvorschriften mit Freiheits- oder Geldstrafe geahndet werden. \\
+
+Eine unterschriebne Zweitschrift dieses Schreibens senden Sie bitte an den Vorstand von bingo e.V. zurück. \\
+
+
+\begin{tabu}{p{12cm}}\\
+		\tabucline[1pt]{-}		
+ Datum, Ort und Unterschrift vom 1. oder Stlv. Vorsitzenden\\
+\end{tabu} \\
+
+Über die Verpflichtung auf das Datengeheimnis und die sich daraus ergebenden Verhaltensweisen wurde ich unterrichtet. Das Merkblatt zur Verpflichtungserklärung (Texte der §§ 5, 43 Absatz 2, 44 BDSG) habe ich erhalten.\\
+
+
+\begin{tabu}{p{12cm}}\\
+	\tabucline[1pt]{-}		
+	Datum, Ort und Unterschrift vom Verpflichtenden\\
+\end{tabu} \\
+
+\newpage
+
+\section{Merkblatt zur Verpflichtungserklärung}
+
+§ 5 BDSG - Datengeheimnis
+
+Den bei der Datenverarbeitung beschäftigten Personen ist untersagt, personenbezogene Daten unbefugt zu erheben, zu verarbeiten oder zu nutzen (Datengeheimnis). Diese Personen sind, soweit sie bei nichtöffentlichen Stellen beschäftigt werden, bei der Aufnahme ihrer Tätigkeit auf das Datengeheimnis zu verpflichten. Das Datengeheimnis besteht auch nach Beendigung ihrer Tätigkeit fort.  \\
+
+§ 43 Absatz 2 BDSG  - Bußgeldvorschriften
+
+Ordnungswidrig handelt, wer vorsätzlich oder fahrlässig 
+\begin{enumerate}
+	\setlength{\itemsep}{-2pt}
+	\item unbefugt personenbezogene Daten, die nicht allgemein zugänglich sind, erhebt oder verarbeitet, 
+	\item  unbefugt personenbezogene Daten, die nicht allgemein zugänglich sind, zum Abruf mittels automatisierten Verfahrens bereithält, 
+	\item  unbefugt personenbezogene Daten, die nicht allgemein zugänglich sind, abruft oder sich oder einem anderen aus automatisierten Verarbeitungen oder nicht automatisierten Dateien verschafft, 
+	\item  die Übermittlung von personenbezogenen Daten, die nicht allgemein zugänglich sind, durch unrichtige Angaben erschleicht, 
+	\item  entgegen § 16 Abs. 4 Satz 1, § 28 Abs. 5 Satz 1, auch in Verbindung mit § 29 Abs. 4, § 39 Abs. 1 Satz 1 oder § 40 Abs. 1, die übermittelten Daten für andere Zwecke nutzt, 
+	\item[5a] entgegen § 28 Abs. 3b den Abschluss eines Vertrages von der Einwilligung des Betroffenen abhängig macht,
+	\item[5b]  entgegen § 28 Abs. 4 Satz 1 Daten für Zwecke der Werbung oder der Markt- oder Meinungsforschung verarbeitet oder nutzt,
+	\item entgegen § 30 Abs. 1 Satz 2, § 30a Abs. 3 Satz 3 oder § 40 Abs. 2 Satz 3 ein dort genanntes Merkmal mit einer Einzelangabe zusammenführt oder
+	\item entgegen § 42a Satz 1 eine Mitteilung nicht, nicht richtig, nicht vollständig oder nicht rechtzeitig macht.
+\end{enumerate}
+%\newpage
+\section{§ 44 BDSG -- Strafvorschriften}
+\begin{enumerate}
+	\setlength{\itemsep}{-2pt}
+\item Wer eine in § 43 Abs. 2 bezeichnete vorsätzliche Handlung gegen Entgelt oder in der Absicht, sich oder einen anderen zu bereichern oder einen anderen zu schädigen, begeht, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft. 
+
+\item Die Tat wird nur auf Antrag verfolgt. Antragsberechtigt sind der Betroffene, die verantwortliche Stelle, der Bundesbeauftragte für den Datenschutz und die Aufsichtsbehörde.
+\end{enumerate}
+\end{document}

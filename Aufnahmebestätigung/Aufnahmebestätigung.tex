@@ -1,0 +1,104 @@
+\documentclass{bingoevletter}
+\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[table]{xcolor}
+\usepackage{tabu}
+\usepackage{framed}
+\usepackage{eurosym}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage{ifthen}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=blue}
+
+\renewcommand{\DefaultOptionsofCheckBox}{print,bordercolor=black}
+\renewcommand{\DefaultOptionsofText}{print,bordercolor=black,borderstyle=U}
+\renewcommand{\DefaultOptionsofComboBox}{print,sort,bordercolor=black,borderstyle=U}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\setlength{\parindent}{0pt}
+\newboolean{Hauptbenutzer}
+\newboolean{ErsterMitbenutzer}
+\newboolean{ZweiterMitbenutzer}
+\newboolean{DritterMitbenutzer}
+\newcommand{\Benutzer}{}
+
+% ====== Hier deinen Scheiß eintragen ======
+\newcommand{\Anrede}{Herr}
+\newcommand{\Vorname}{Vorname}
+\newcommand{\Nachname}{Nachname}
+\newcommand{\Adresse}{Adresse mit nummer}
+\newcommand{\PLZ}{85049}
+\newcommand{\Ort}{Ingolstadt}
+\newcommand{\Geburtsdatum}{01.01.1970}
+\newcommand{\KontoVorname}{\Vorname}
+\newcommand{\KontoNachname}{\Nachname}
+\newcommand{\IBAN}{XXX}
+\newcommand{\BIC}{XXX}
+\newcommand{\AntragDatum}{01.01.2017}
+
+
+\newcommand{\Nutzername}{ab123}
+\newcommand{\Altenummer}{103924}
+
+\setboolean{Hauptbenutzer}{false}
+\newcommand{\Password}{kennwort}
+\newcommand{\ServicePin}{1337}
+
+\setboolean{ErsterMitbenutzer}{false}
+\newcommand{\ErsterMitbenutzerName}{Vor und Nachname}
+\newcommand{\ErsterMitbenutzerPassword}{kennwort}
+\newcommand{\ErsterMitbenutzerServicePin}{1337}
+
+\setboolean{ZweiterMitbenutzer}{false}
+\newcommand{\ZweiterMitbenutzerName}{bla-2}
+\newcommand{\ZweiterMitbenutzerPassword}{kennwort}
+\newcommand{\ZweiterMitbenutzerServicePin}{1337}
+
+\setboolean{DritterMitbenutzer}{false}
+\newcommand{\DritterMitbenutzerName}{bla-3}
+\newcommand{\DritterMitbenutzerPassword}{kennwort}
+\newcommand{\DritterMitbenutzerServicePin}{1337}
+
+\newcommand{\Login}{\Nutzername}
+
+
+
+\begin{document}
+\begin{letter}{% 
+		\Anrede \\
+		\Vorname \ \Nachname\\
+		\Adresse\\
+		\PLZ \ \Ort%
+	}
+	\opening{Bestätigung Ihrer Mitgliedschaft beim Bürgernetz Ingolstadt e.V.}
+
+	Sehr geehrte(r) \Anrede \ \Nachname,\ \\
+	wir bestätigen mit diesem Schreiben Ihre Mitgliedschaft beim Bürgernetz Ingolstadt e.V. zum \AntragDatum \ und freuen uns auf Ihre aktive Mitarbeit im Verein.\
+	
+	Ihre Email-Adresse lautet \textbf{\Login @bingo-ev.de} – wir empfehlen Aliase für den Mailverkehr einzurichten. Wie, erfahren Sie bei Bedarf vom Service-Team. \\
+	Bitte überprüfen Sie nochmals Ihre persönlichen Daten. Wir bitten Sie ggf. um Korrektur.\\
+	
+	Name: \Vorname \ \Nachname \\
+	Adresse:	\Adresse,\PLZ \ \Ort \\
+	Geburtsdatum:	\Geburtsdatum \\
+	Kontoinhaber:	\KontoVorname \ \KontoNachname \\
+	IBAN:	\IBAN \\
+	BIC:	\BIC \\
+	
+	Aktuelle Informationen über Termine, Veranstaltungen und unsere Angebote erhalten Sie im Internet
+	unter http://www.bingo-ev.de/.
+	\closing{Mit freundlichen Grüßen}
+	\end{letter}
+	
+
+\ifthenelse{\boolean{Hauptbenutzer}}{\renewcommand{\Benutzer}{\Vorname \ \Nachname} \input{tex/zugangsdaten.tex}}{}
+\ifthenelse{\boolean{ErsterMitbenutzer}}{\renewcommand{\Benutzer}{\ErsterMitbenutzerName} \renewcommand{\Login}{\Nutzername -1} \renewcommand{\Password}{\ErsterMitbenutzerPassword} \renewcommand{\ServicePin}{\ErsterMitbenutzerServicePin} \input{tex/zugangsdaten.tex} }{}
+\ifthenelse{\boolean{ZweiterMitbenutzer}}{\renewcommand{\Login}{\Nutzername -2} \renewcommand{\Benutzer}{\ZweiterMitbenutzerName} \renewcommand{\Password}{\ZweiterMitbenutzerPassword} \renewcommand{\ServicePin}{\ZweiterMitbenutzerServicePin} \input{tex/zugangsdaten.tex} }{}
+\ifthenelse{\boolean{DritterMitbenutzer}}{\renewcommand{\Benutzer}{\DritterMitbenutzerName} \renewcommand{\Login}{\Nutzername -3} \renewcommand{\Password}{\DritterMitbenutzerPassword} \renewcommand{\ServicePin}{\DritterMitbenutzerServicePin} \input{tex/zugangsdaten.tex} }{}
+
+
+\end{document}
