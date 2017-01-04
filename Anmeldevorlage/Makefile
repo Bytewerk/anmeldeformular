@@ -13,4 +13,7 @@ spell:
 	find . -name '*.tex' -exec aspell --mode=tex --lang=de --personal=./aspell-dict.dat -c {} \;
 
 clean:
-	-rm -f *.{aux,log,out}
+	rm *.aux
+	rm *.log
+	rm *.out
+	rm *.pdf
